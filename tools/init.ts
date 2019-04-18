@@ -1,5 +1,6 @@
 /**
  * This script runs automatically after your first npm-install.
+ * create own LibraryName
  */
 const _prompt = require("prompt")
 const { mv, rm, which, exec } = require("shelljs")
@@ -14,8 +15,6 @@ const rmDirs = [
   ".git"
 ]
 const rmFiles = [
-  ".all-contributorsrc",
-  ".gitattributes",
   "tools/init.ts"
 ]
 const modifyFiles = [

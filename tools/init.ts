@@ -8,7 +8,7 @@ const replace = require("replace-in-file")
 const colors = require("colors")
 const path = require("path")
 const { readFileSync, writeFileSync } = require("fs")
-const { fork } = require("child_process")
+// const { fork } = require("child_process")
 
 // Note: These should all be relative to the project root directory
 const rmDirs = [
@@ -268,12 +268,12 @@ function finalize() {
   writeFileSync(jsonPackage, JSON.stringify(pkg, null, 2))
   console.log(colors.green("Postinstall script has been removed"))
 
-  // Initialize Husky
-  fork(
-    path.resolve(__dirname, "..", "node_modules", "husky", "bin", "install"),
-    { silent: true }
-  );
-  console.log(colors.green("Git hooks set up"))
+  // // Initialize Husky
+  // fork(
+  //   path.resolve(__dirname, "..", "node_modules", "husky", "bin", "install"),
+  //   { silent: true }
+  // );
+  // console.log(colors.green("Git hooks set up"))
 
   console.log("\n")
 }
